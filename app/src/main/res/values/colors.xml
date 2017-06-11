@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3fa3b5</color>
+    <color name="colorPrimaryDark">#306d9f</color>
+    <color name="colorAccent">#78909c</color>
+
+    <color name="negro">#000000</color>
+    <color name="gris">#585858</color>
+    <color name="fondoInputText">#8f8a8a8a</color>
+    <color name="white">#e4e4e4</color>
+    <color name="fondoInputTextI">#55000000</color>
+
+    <color name="icon">#585858</color>
+    <color name="elementBg">#333333</color>
+    <color name="whiteT">#38e4e4e4</color>
+    <color name="blackT">#90000000</color>
+    <color name="grisT">#50585858</color>
+</resources>
