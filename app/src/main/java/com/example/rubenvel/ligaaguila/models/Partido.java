@@ -6,7 +6,23 @@ package com.example.rubenvel.ligaaguila.models;
 
 public class Partido {
 
-    String equipo1, equipo2, descripcion, desc, fecha, imagen;
+    String equipo1, equipo2, fecha, imagen, resultado, estadio;
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
+    public String getEstadio() {
+        return estadio;
+    }
+
+    public void setEstadio(String estadio) {
+        this.estadio = estadio;
+    }
 
     public String getEquipo1() {
         return equipo1;
@@ -22,22 +38,6 @@ public class Partido {
 
     public void setEquipo2(String equipo2) {
         this.equipo2 = equipo2;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
     }
 
     public String getFecha() {

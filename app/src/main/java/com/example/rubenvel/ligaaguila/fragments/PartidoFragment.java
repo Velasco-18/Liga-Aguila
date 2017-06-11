@@ -18,14 +18,9 @@ import com.example.rubenvel.ligaaguila.util.PartidoData;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PartidoFragment extends Fragment implements View.OnClickListener{
+public class PartidoFragment extends Fragment{
 
     public static PartidoFragment instace(){return new PartidoFragment();}
-
-    public interface OnItemClick{
-        void onClick(int pos);
-    }
-
 
     public PartidoFragment() {
         // Required empty public constructor
@@ -33,7 +28,6 @@ public class PartidoFragment extends Fragment implements View.OnClickListener{
 
     FragmentPartidoBinding binding;
     PartidosAdapter adapter;
-    OnItemClick onItemClick;
 
 
     @Override
@@ -42,23 +36,11 @@ public class PartidoFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_partido, container, false);
 
-        adapter = new PartidosAdapter(getLayoutInflater(null), PartidoData.getDataPartido(), this);
+        adapter = new PartidosAdapter(getLayoutInflater(null), PartidoData.getDataPartido(), null);
         binding.partidoList.setAdapter(adapter); //Posicion Recycler
         binding.partidoList.setLayoutManager(new LinearLayoutManager(getActivity())); //Organizar elementos en pantalla
 
         return binding.getRoot();
-    }
-
-    @Override
-    public void onClick(View v) {
-
-        //int pos = binding.partidoList.getChildAdapterPosition(v);
-        //onItemClick.onClick(pos);
-
-        //Intent intent = new Intent(getContext(), PartidosAdapter.class);
-        //intent.putExtra("posicion", pos);
-        //startActivity(intent);
-
     }
 
 }

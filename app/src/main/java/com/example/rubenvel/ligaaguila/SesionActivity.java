@@ -4,14 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
-import android.preference.Preference;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.rubenvel.ligaaguila.databinding.ActivitySesionBinding;
-import com.example.rubenvel.ligaaguila.models.Noticia;
 
 public class SesionActivity extends AppCompatActivity {
 

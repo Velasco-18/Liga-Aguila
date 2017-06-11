@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import com.example.rubenvel.ligaaguila.R;
 import com.example.rubenvel.ligaaguila.databinding.TemplatePartidoBinding;
 import com.example.rubenvel.ligaaguila.models.Partido;
-import com.example.rubenvel.ligaaguila.util.NoticiaData;
 import com.example.rubenvel.ligaaguila.util.PartidoData;
 
 import java.util.List;
@@ -20,10 +19,6 @@ import java.util.List;
  */
 
 public class PartidosAdapter extends RecyclerView.Adapter<PartidosAdapter.PartidoHolder>{
-
-    public interface OnPartidoSelected{
-        void onPartido(int position);
-    }
 
     LayoutInflater inflater;
     List<Partido> dataP;
@@ -56,22 +51,14 @@ public class PartidosAdapter extends RecyclerView.Adapter<PartidosAdapter.Partid
         return dataP.size();
     }
 
-    //public void onClick(View view){
-    //    int pos = (int) view.getTag();
-    //    onPartidoSelected.onPartido(pos);
-    //}
 
     //region ViewHolder
     public static class PartidoHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         //Este ViewHolder es la clase que da acceso a los views del template
         TemplatePartidoBinding binding;
 
-        Context context;
-
         public PartidoHolder(View itemView) {
             super(itemView);
-
-            context = itemView.getContext();
 
             binding = DataBindingUtil.bind(itemView);
         }
@@ -82,11 +69,7 @@ public class PartidosAdapter extends RecyclerView.Adapter<PartidosAdapter.Partid
 
         @Override
         public void onClick(View v) {
-            int pos = 0;
 
-           // Intent intent = new Intent(context, NoticiaContentActivity.class);
-           // intent.putExtra(NoticiaContentActivity.POS_EXTRA, pos);
-           // context.startActivity(intent);
         }
     }
     //endregion
