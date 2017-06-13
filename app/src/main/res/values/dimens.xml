@@ -17,4 +17,5 @@
     <dimen name="icon_Equipo">50dp</dimen>
     <dimen name="noticiaTemplate">240dp</dimen>
     <dimen name="floatingActionButtonDimen">10dp</dimen>
+    <dimen name="letter_title_min">20dp</dimen>
 </resources>

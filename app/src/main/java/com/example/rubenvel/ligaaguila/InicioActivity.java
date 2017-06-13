@@ -13,11 +13,21 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.rubenvel.ligaaguila.databinding.ActivityInicioBinding;
+import com.example.rubenvel.ligaaguila.models.SimpleResponse;
+import com.example.rubenvel.ligaaguila.models.Usuario;
+import com.example.rubenvel.ligaaguila.net.UserService;
+import com.example.rubenvel.ligaaguila.util.Data;
 
-public class InicioActivity extends AppCompatActivity  {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class InicioActivity extends AppCompatActivity{
 
     Context contexto;
     ActivityInicioBinding binding;
+    UserService service;
+
     SharedPreferences preferences;
 
     @Override
@@ -28,26 +38,9 @@ public class InicioActivity extends AppCompatActivity  {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.setHandler(this);
 
+        service = Data.retrofit.create(UserService.class);
 
         preferences = getSharedPreferences("Registro", contexto.MODE_PRIVATE);
-
-        /*String Nombre=preferences.getString("Nombre", "" );
-        binding.editNombre.setText(Nombre);
-
-        String Apellido=preferences.getString("Apellido", "" );
-        binding.editApellido.setText(Apellido);
-
-        String Usuario=preferences.getString("Usuario", "" );
-        binding.editUsuario.setText(Usuario);
-
-        String Contrasena=preferences.getString("Contrasena", "" );
-        binding.editContrasena.setText(Contrasena);
-
-        String ContrasenaRec=preferences.getString("ContrasenaRec", "" );
-        binding.editContrasenaRec.setText(ContrasenaRec);
-
-        String Correo=preferences.getString("Correo", "" );
-        binding.editCorreo.setText(Correo);*/
 
         int spinnerEquipo = preferences.getInt("Equipo",-1);
         if(spinnerEquipo != -1){
@@ -57,10 +50,20 @@ public class InicioActivity extends AppCompatActivity  {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == android.R.id.home)
+        if(item.getItemId() == android.R.id.home){
+            Intent intent = new Intent(this, SesionActivity.class);
+            startActivity(intent);
             finish();
-
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, SesionActivity.class);
+        startActivity(intent);
+        finish();
+        super.onBackPressed();
     }
 
     public void goToGuardarRegistro(){
@@ -69,14 +72,43 @@ public class InicioActivity extends AppCompatActivity  {
         String apellido=binding.editApellido.getText().toString();
         String usuario =binding.editUsuario.getText().toString();
         String contrasena= binding.editContrasena.getText().toString();
-        String contrasenaRec = binding.editContrasenaRec.getText().toString();
+        String contrasenaR = binding.editContrasenaRec.getText().toString();
         String correo = binding.editCorreo.getText().toString();
 
-         if(nombre.isEmpty() || apellido.isEmpty() || usuario.isEmpty() || contrasena.isEmpty() || contrasenaRec.isEmpty() || correo.isEmpty()){
+         if(nombre.isEmpty() || apellido.isEmpty() || usuario.isEmpty() || contrasena.isEmpty() || contrasenaR.isEmpty() || correo.isEmpty()){
 
              Toast.makeText(getApplicationContext(), "Llene los campos de registro completamente", Toast.LENGTH_SHORT).show();
 
-         }else if(contrasena.equals(contrasenaRec)){
+         }else if(contrasena.equals(contrasenaR)){
+             /////////////////////////////Se crea el objeto de usuario para enviar al Servidor/////////////////////////
+             Usuario usuarios = new Usuario(nombre, apellido, usuario, contrasena, contrasenaR, correo);
+             Call<SimpleResponse> request = service.registro(usuarios);
+             request.enqueue(new Callback<SimpleResponse>() {
+                 @Override
+                 public void onResponse(Call<SimpleResponse> call, Response<SimpleResponse> response) {
+                     if(response.isSuccessful()){
+
+                         SimpleResponse res = response.body();
+
+                         if(res.isSuccess()){
+                             Toast.makeText(getApplicationContext(), "Registrado Correctamente", Toast.LENGTH_SHORT).show();
+
+                             Intent intent = new Intent(InicioActivity.this, SesionActivity.class);
+                             startActivity(intent);
+                             finish();
+                         }else{
+                             Toast.makeText(InicioActivity.this, res.getMsg(), Toast.LENGTH_SHORT).show();
+                         }
+                     }
+                 }
+
+                 @Override
+                 public void onFailure(Call<SimpleResponse> call, Throwable t) {
+                     Toast.makeText(InicioActivity.this, R.string.errorConnect, Toast.LENGTH_SHORT).show();
+
+                 }
+             });
+             /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
              int pos=binding.spinner.getSelectedItemPosition();
 
@@ -85,16 +117,12 @@ public class InicioActivity extends AppCompatActivity  {
              editor.putString("Apellido", apellido);
              editor.putString("Usuario", usuario);
              editor.putString("Contrasena", contrasena);
-             editor.putString("ContrasenaRec", contrasenaRec);
+             editor.putString("ContrasenaRec", contrasenaR);
              editor.putString("Correo", correo);
 
              editor.putInt("Equipo", pos);
 
              editor.apply();
-
-             Toast.makeText(getApplicationContext(), "Registrado Correctamente", Toast.LENGTH_SHORT).show();
-             Intent intent = new Intent(this, SesionActivity.class);
-             startActivity(intent);
 
          }else{
 
