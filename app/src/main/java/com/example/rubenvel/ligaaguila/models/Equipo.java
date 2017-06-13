@@ -7,14 +7,19 @@ package com.example.rubenvel.ligaaguila.models;
 public class Equipo {
 
     Long idequipo;
-    String nombre, ciudad, informacion;
+    String nombre;
+    int posicion, puntos, PJ, PG, PE, PP, DG;
 
-    public Equipo(String nombre, String ciudad, String informacion) {
+    public Equipo(String nombre, int posicion, int puntos, int PJ, int PG, int PE, int PP, int DG) {
         this.nombre = nombre;
-        this.ciudad = ciudad;
-        this.informacion = informacion;
+        this.posicion = posicion;
+        this.puntos = puntos;
+        this.PJ = PJ;
+        this.PG = PG;
+        this.PE = PE;
+        this.PP = PP;
+        this.DG = DG;
     }
-
     public Long getIdequipo() {
         return idequipo;
     }
@@ -31,19 +36,59 @@ public class Equipo {
         this.nombre = nombre;
     }
 
-    public String getCiudad() {
-        return ciudad;
+    public int getPosicion() {
+        return posicion;
     }
 
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
+    public void setPosicion(int posicion) {
+        this.posicion = posicion;
     }
 
-    public String getInformacion() {
-        return informacion;
+    public int getPuntos() {
+        return puntos;
     }
 
-    public void setInformacion(String informacion) {
-        this.informacion = informacion;
+    public void setPuntos(int puntos) {
+        this.puntos = puntos;
+    }
+
+    public int getPJ() {
+        return PJ;
+    }
+
+    public void setPJ(int PJ) {
+        this.PJ = PJ;
+    }
+
+    public int getPG() {
+        return PG;
+    }
+
+    public void setPG(int PG) {
+        this.PG = PG;
+    }
+
+    public int getPE() {
+        return PE;
+    }
+
+    public void setPE(int PE) {
+        this.PE = PE;
+    }
+
+    public int getPP() {
+        return PP;
+    }
+
+    public void setPP(int PP) {
+        this.PP = PP;
+    }
+
+    public int getDG() {
+        return DG;
+    }
+
+    public void setDG(int DG) {
+        this.DG = DG;
     }
 }

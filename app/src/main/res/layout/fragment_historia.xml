@@ -192,15 +192,16 @@
                 <TextView
                     android:id="@+id/DescripcionIntro"
                     android:layout_width="0dp"
-                    android:layout_height="172dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_marginBottom="0dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="8dp"
                     android:background="@color/grisT"
+                    android:paddingBottom="8dp"
                     android:paddingLeft="8dp"
                     android:paddingTop="8dp"
                     android:text="La Categoría Primera A,1 llamada por motivos comerciales Liga Águila, es el campeonato de primera división del fútbol profesional de Colombia, que es organizado por la División Mayor del Fútbol Colombiano (Dimayor), entidad dependiente de la "
@@ -209,7 +210,7 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toLeftOf="@+id/cardView1"
                     app:layout_constraintTop_toBottomOf="@+id/textView"
-                    app:layout_constraintVertical_bias="0.444" />
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/cardView1"
@@ -269,8 +270,9 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="0dp"
                     android:background="@color/grisT"
+                    android:padding="8dp"
                     android:text="Federación Colombiana de Fútbol.  Desde su profesionalismo en 1948 el certamen se ha disputado durante 69 años (incluyendo la Temporada suspendida en 1989) y se han otorgado 53 títulos en torneos largos y 30 en torneos cortos, para un total de 83 títulos oficiales, siendo Atlético Nacional de Medellín el equipo más ganador en la primera división de Colombia, obteniendo 15 títulos, segundo está Millonarios de Bogotá quien registra 14 títulos en esta categoría, seguido del América de Cali quien ha ganado 13 títulos."
                     android:textColor="@android:color/white"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -304,7 +306,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:layout_constraintGuide_percent="0.09" />
+                    app:layout_constraintGuide_percent="0.1" />
             </android.support.constraint.ConstraintLayout>
 
         </ScrollView>

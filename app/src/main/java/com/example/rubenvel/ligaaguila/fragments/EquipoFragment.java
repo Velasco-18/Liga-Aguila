@@ -24,7 +24,7 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EquipoFragment extends Fragment implements Callback<List<Equipo>> {
+public class EquipoFragment extends Fragment {
 
     public static EquipoFragment instace(){return new EquipoFragment();}
 
@@ -32,7 +32,6 @@ public class EquipoFragment extends Fragment implements Callback<List<Equipo>> {
         // Required empty public constructor
     }
 
-    EquipoService service;
     FragmentEquipoBinding binding;
 
     @Override
@@ -41,25 +40,6 @@ public class EquipoFragment extends Fragment implements Callback<List<Equipo>> {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_equipo, container, false);
 
-        service = Data.retrofit.create(EquipoService.class);
-        loadEquipos();
         return binding.getRoot();
-    }
-
-    private void loadEquipos(){
-        Call<List<Equipo>> req = service.all();
-        req.enqueue(this);
-    }
-
-    @Override
-    public void onResponse(Call<List<Equipo>> call, Response<List<Equipo>> response) {
-        if(response.isSuccessful()){
-            Toast.makeText(getActivity(), "Response Successful", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
-    public void onFailure(Call<List<Equipo>> call, Throwable t) {
-        Toast.makeText(getActivity(), "Falló", Toast.LENGTH_SHORT).show();
     }
 }
