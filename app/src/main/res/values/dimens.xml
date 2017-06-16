@@ -18,4 +18,7 @@
     <dimen name="noticiaTemplate">240dp</dimen>
     <dimen name="floatingActionButtonDimen">10dp</dimen>
     <dimen name="letter_title_min">20dp</dimen>
+    <dimen name="img_dimen_big">100dp</dimen>
+    <dimen name="dpmini">70dp</dimen>
+    <dimen name="dimenImgJugador">80dp</dimen>
 </resources>

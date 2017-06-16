@@ -74,6 +74,7 @@ public class InicioActivity extends AppCompatActivity{
         String contrasena= binding.editContrasena.getText().toString();
         String contrasenaR = binding.editContrasenaRec.getText().toString();
         String correo = binding.editCorreo.getText().toString();
+        int equipo=binding.spinner.getSelectedItemPosition();
 
          if(nombre.isEmpty() || apellido.isEmpty() || usuario.isEmpty() || contrasena.isEmpty() || contrasenaR.isEmpty() || correo.isEmpty()){
 
@@ -81,7 +82,7 @@ public class InicioActivity extends AppCompatActivity{
 
          }else if(contrasena.equals(contrasenaR)){
              /////////////////////////////Se crea el objeto de usuario para enviar al Servidor/////////////////////////
-             Usuario usuarios = new Usuario(nombre, apellido, usuario, contrasena, contrasenaR, correo);
+             Usuario usuarios = new Usuario(nombre, apellido, usuario, contrasena, contrasenaR, correo, equipo);
              Call<SimpleResponse> request = service.registro(usuarios);
              request.enqueue(new Callback<SimpleResponse>() {
                  @Override
@@ -110,8 +111,6 @@ public class InicioActivity extends AppCompatActivity{
              });
              /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-             int pos=binding.spinner.getSelectedItemPosition();
-
              SharedPreferences.Editor editor = preferences.edit();
              editor.putString("Nombre", nombre);
              editor.putString("Apellido", apellido);
@@ -120,7 +119,7 @@ public class InicioActivity extends AppCompatActivity{
              editor.putString("ContrasenaRec", contrasenaR);
              editor.putString("Correo", correo);
 
-             editor.putInt("Equipo", pos);
+             editor.putInt("Equipo", equipo);
 
              editor.apply();
 

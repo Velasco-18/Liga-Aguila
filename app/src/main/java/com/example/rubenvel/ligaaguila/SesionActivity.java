@@ -42,7 +42,7 @@ public class SesionActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sesion);
         binding.setHandlerSesion(this);
         binding.setHandlerRegistro(this);
-        binding.setHandlerOmitir(this);
+
         //Objeto del servicio usuario
         service = Data.retrofit.create(UserService.class);
     }
@@ -97,9 +97,4 @@ public class SesionActivity extends AppCompatActivity {
         finish();
     }
 
-    public void goToOmitir(){
-        Intent intent = new Intent(this, NoticiasActivity.class);
-        startActivity(intent);
-        finish();
-    }
 }

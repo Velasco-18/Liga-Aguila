@@ -34,7 +34,7 @@ public class NoticiasActivity extends AppCompatActivity implements  DrawerLayout
     Context contexto;
     SharedPreferences preferences;
 
-    int content, barra;
+    int content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

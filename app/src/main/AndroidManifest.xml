@@ -31,6 +31,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UserActivity"
-            android:label="@string/perfil"></activity>
+            android:label="@string/perfil" />
+        <activity
+            android:name=".MoreInfoActivity"
+            android:label="@string/moreInfo" />
     </application>
+
 </manifest>

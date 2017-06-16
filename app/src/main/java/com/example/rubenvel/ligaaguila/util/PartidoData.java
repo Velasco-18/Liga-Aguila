@@ -113,7 +113,7 @@ public class PartidoData {
             p12.setFecha("Domingo 11 de Junio - 5:15pm");
             p12.setImagen("http://www.sitioco.com/futbolcolombiano/wp-content/uploads/2017/02/ver-america-vs-pasto-domingo-26-de-febrero-de-2017.jpg");
             p12.setEstadio("SemiFinal \nEstadio: Monumental de Palma Seca");
-            p12.setResultado(" Esperando Resultado ");
+            p12.setResultado(" 2 - 0 ");
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Partido p13 = new Partido();
             p13.setEquipo1("Atlético Nacional");
@@ -121,39 +121,39 @@ public class PartidoData {
             p13.setFecha("Domingo 11 de Junio - 7:30pm");
             p13.setImagen("http://www.sitioco.com/futbolcolombiano/wp-content/uploads/2016/08/ver-nacional-vs-millonarios-domingo-21-de-agosto-de-2016.jpg");
             p13.setEstadio("SemiFinal \nEstadio: Atanasio Girardot");
-            p13.setResultado(" Esperando Resultado ");
+            p13.setResultado(" 1 - 0 ");
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Partido p14 = new Partido();
-            p14.setEquipo1("Atlético Nacional");
-            p14.setEquipo2("América de Cali");
+            p14.setEquipo1("Peportivo Cali");
+            p14.setEquipo2("Atlético Nacional");
             p14.setFecha("Miércoles 14 de Junio - 7:00pm");
-            p14.setImagen("http://www.sitioco.com/futbolcolombiano/wp-content/uploads/2017/03/ver-america-de-cali-vs-atletico-nacional-domingo-5-de-marzo-de-2017.jpg");
-            p14.setEstadio("GRAN FINAL \nEstadio: Atanasio Girardot");
-            p14.setResultado(" Esperando Resultado ");
+            p14.setImagen("http://www.sitioco.com/futbolcolombiano/wp-content/uploads/2013/12/ver-cali-vs-nacional-miercoles-11-de-diciembre-2013.jpg");
+            p14.setEstadio("GRAN FINAL IDA \nEstadio: Monumental de Palma Seca");
+            p14.setResultado(" 2 - 0 ");
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             Partido p15 = new Partido();
-            p15.setEquipo1("América de Cali");
-            p15.setEquipo2("Atlético Nacional");
+            p15.setEquipo1("Atlético Nacional");
+            p15.setEquipo2("Deportivo Cali");
             p15.setFecha("Domingo 18 de Junio - 7:00pm");
-            p15.setImagen("http://www.sitioco.com/futbolcolombiano/wp-content/uploads/2017/03/ver-america-de-cali-vs-atletico-nacional-domingo-5-de-marzo-de-2017.jpg");
-            p15.setEstadio("GRAN FINAL \nEstadio: Pascual Guerrero");
+            p15.setImagen("http://www.sitioco.com/futbolcolombiano/wp-content/uploads/2014/07/ver-nacional-vs-cali-domingo-27-de-julio-2014.jpg");
+            p15.setEstadio("GRAN FINAL VUELTA \nEstadio: Atanasio Girardot");
             p15.setResultado(" Esperando Resultado ");
 
-            dataP.add(p1);
-            dataP.add(p2);
-            dataP.add(p3);
-            dataP.add(p4);
-            dataP.add(p5);
-            dataP.add(p6);
-            dataP.add(p7);
-            dataP.add(p8);
-            dataP.add(p9);
-            dataP.add(p10);
-            dataP.add(p11);
-            dataP.add(p12);
-            dataP.add(p13);
-            dataP.add(p14);
             dataP.add(p15);
+            dataP.add(p14);
+            dataP.add(p13);
+            dataP.add(p12);
+            dataP.add(p11);
+            dataP.add(p10);
+            dataP.add(p9);
+            dataP.add(p8);
+            dataP.add(p7);
+            dataP.add(p6);
+            dataP.add(p5);
+            dataP.add(p4);
+            dataP.add(p3);
+            dataP.add(p2);
+            dataP.add(p1);
 
         }
 

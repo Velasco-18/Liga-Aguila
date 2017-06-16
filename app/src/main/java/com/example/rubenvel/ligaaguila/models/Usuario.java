@@ -8,19 +8,29 @@ public class Usuario {
 
     Long idusuario;
     String nombre, apellido, user, password, passwordR, correo;
+    int equipo;
 
-    public Usuario(String nombre, String apellido, String user, String password, String passwordR, String correo) {
+    public Usuario(String nombre, String apellido, String user, String password, String passwordR, String correo, int equipo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.user = user;
         this.password = password;
         this.passwordR = passwordR;
         this.correo = correo;
+        this.equipo = equipo;
     }
 
     public Usuario(String user, String password) {
         this.user = user;
         this.password = password;
+    }
+
+    public int getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(int equipo) {
+        this.equipo = equipo;
     }
 
     public Long getIdusuario() {

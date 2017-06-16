@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import com.example.rubenvel.ligaaguila.attrs.Attrs;
 import com.example.rubenvel.ligaaguila.databinding.ActivityUserBinding;
+import com.example.rubenvel.ligaaguila.net.EquipoService;
+import com.example.rubenvel.ligaaguila.net.UserService;
+import com.example.rubenvel.ligaaguila.util.Data;
 
 public class UserActivity extends AppCompatActivity {
 
